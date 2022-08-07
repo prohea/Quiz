@@ -7,7 +7,7 @@ var gameOverEl = document.getElementById("game-over");
 startButton.addEventListener("click", startGame);
 var resultsContainer = document.getElementById("results");
 var retryButton = document.getElementById("retry");
-var resultInfo =document.getElementById("result");
+var answerButton = document.getElementById("answer");
 
 
 //Game Variables
@@ -69,7 +69,6 @@ function displayQuestion() {
     `;
 }
 
-
 function endGame() {
   //stop the timer
   clearInterval(timer);
@@ -80,5 +79,5 @@ function endGame() {
 }
 
 function retryGame() {
-
+  console.log("Click Retry");
 }
