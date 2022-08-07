@@ -5,18 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
+    <title>Quiz</title>
   </head>
   <body>
-    <div id="start-game">
+    <center>
+    <main id="start-game">
       <h1>Quiz</h1>
-      <p>Rules</p>
+      <h2>Rules</h2>
+      <p>You will have 60 seconds to take the quiz.</p>
       <button id="startbutton">Start</button>
-    </div>
+    </main>
+    <article>
+    <div id="timer" class="hidden"></div>
     <div id="question-container" class="hidden">
-        this is the question container
     </div>
-
+    <div id="game-options">
+    </div>
+    <div id="game-over" class="hidden">Game over!
+      <button id="retrybutton">Retry</button>
+      </div>
+    <div id="result-info" class="hidden">
+      <h1>Score:<span id="player-score"></span></h1>
+    </div>
     <script src="./javascript.js"></script>
+    </article>
   </body>
+</center>
 </html>

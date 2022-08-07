@@ -1,12 +1,137 @@
+* {
+  align-content: center;
+}
+
 h1 {
-    color: red;
+  color: rgb(42, 40, 189);
+  text-decoration: wavy;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+h2 {
+  color: rgb(191, 104, 17);
+  text-decoration: underline;
+}
+
+p {
+  font-style: italic;
+  color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: rgb(13, 9, 9);
+  background-image: none;
+}
+
+main {
+  background-image: url("https://68.media.tumblr.com/da6547ffaefedb8aa7180bfb2c3c2516/tumblr_naqniaapvE1r4gnono1_500.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
 }
 
 #startbutton {
-
-
+  background-color: #244526;
+  color: white;
+  padding: 15px 32px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
-.hidden{
-    display: none;
+#startbutton:hover {
+  background-color: #970606;
+  color: white;
+}
+
+#retrybutton {
+  background-color: #0f0c0c;
+  color: white;
+  padding: 15px 32px;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  align-content: center;
+}
+
+#retrybutton:hover {
+  background-color: #9a1515;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+#game-over {
+  background-image: url("https://pa1.narvii.com/6033/f368f88ba3cbce49059427f5362663aa42316a6e_hq.gif");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 150px;
+  color: red;
+  text-align: left;
+}
+
+#timer {
+  color: red;
+  text-decoration: dotted;
+  align-items: center;
+}
+
+#question-container {
+  border-radius: 10px;
+  background-image: url("https://64.media.tumblr.com/db53cb58f8d3a54fdda4a4f1874b8424/a666abc5f58c6b1d-82/s1280x1920/73f9dde457135a730585d755978fb21f8c0ea445.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  padding: 20px;
+  flex-direction: row;
+}
+
+.answer-btn {
+  background-color: #141d36;
+  color: white;
+  padding: 15px 32px;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.answer-btn:hover {
+  background-color: #0fe516;
+  color: white;
+}
+
+#result-info {
+    color: white;
+    position: absolute;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: medium;
+  }
+
+  #question-container {
+    font-size: medium;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: small;
+  }
+
+  #question-container {
+    font-size: small;
+  }
 }
