@@ -1,14 +1,21 @@
 console.log("Hello World");
+
+//Variable Buttons
 var startButton = document.getElementById("startbutton");
 var startGameEl = document.getElementById("start-game");
+var retryButton = document.getElementById("retry");
+var answerButton = document.getElementById("answer-btn");
+
+//Variable Containers
 var questionContainer = document.getElementById("question-container");
+var resultsContainer = document.getElementById("results");
+
+//Variable Elements
 var timerEl = document.getElementById("timer");
 var gameOverEl = document.getElementById("game-over");
-startButton.addEventListener("click", startGame);
-var resultsContainer = document.getElementById("results");
-var retryButton = document.getElementById("retry");
-var answerButton = document.getElementById("answer");
 
+//Event Listeners
+startButton.addEventListener("click", startGame);
 
 //Game Variables
 var secondsRemaining = 10;
@@ -16,6 +23,7 @@ var currentQuestion = 0;
 var score = 0;
 var timer;
 
+//Questions Array
 var questionsArray = [
   {
     text: "What is Jude's favorite color?",
@@ -34,9 +42,7 @@ var questionsArray = [
   },
 ];
 
-const SCORE_POINTS = 100
-const MAX_QUESTIONS = 4
-
+//Start Game
 function startGame() {
   console.log("Click Start Button");
 
@@ -59,6 +65,7 @@ function startGame() {
   displayQuestion();
 }
 
+//Display Question
 function displayQuestion() {
   questionContainer.innerHTML = `
         <h2>${questionsArray[currentQuestion].text}</h2>
@@ -69,6 +76,7 @@ function displayQuestion() {
     `;
 }
 
+//End Game
 function endGame() {
   //stop the timer
   clearInterval(timer);
@@ -78,6 +86,7 @@ function endGame() {
   gameOverEl.classList.remove("hidden");
 }
 
+//Retry Game
 function retryGame() {
   console.log("Click Retry");
 }
