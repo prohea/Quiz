@@ -10,6 +10,8 @@ var scoreButton = document.getElementById("scorebutton");
 //Variable Containers
 var questionContainer = document.getElementById("question-container");
 var resultsContainer = document.getElementById("results");
+var footerContainer = document.getElementById("result-info");
+var playerScore = document.getElementById("player-score");
 
 //Variable Elements
 var timerEl = document.getElementById("timer");
@@ -63,9 +65,8 @@ function startGame() {
       // if (retryGame) {
       // }
     }
-  
   }, 1000);
-
+  footerContainer.classList.remove("hidden");
   displayQuestion();
 }
 
@@ -117,27 +118,34 @@ function scoreGame() {
 }
 
 function nextQuestion(event) {
-  console.log(event.target.innerText,event.target.textContent, "btn");
-  var userChoice = event.target.textContent
-  if(userChoice == questionsArray[currentQuestion].correctAnswer) {
-    score+=10
-  }else{
-    secondsRemaining -= 5
+  console.log(event.target.innerText, event.target.textContent, "btn");
+  var userChoice = event.target.textContent;
+  if (userChoice == questionsArray[currentQuestion].correctAnswer) {
+    score += 10;
+    playerScore.innerText = score;
+    event.target.classList.add("right");
+  } else {
+    secondsRemaining -= 5;
+    event.target.classList.add("wrong");
   }
-  if(currentQuestion<questionsArray.length-1){
-    currentQuestion++;
-    var question = document.getElementById("qt") //Question By ID
-    question.textContent = questionsArray[currentQuestion].text
-    var elements = document.querySelectorAll(".answer-btn"); // Class - 4
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].textContent = questionsArray[currentQuestion].options[i]
+  setTimeout(function () {
+    event.target.classList.remove("right");
+    event.target.classList.remove("wrong");
+    if (currentQuestion < questionsArray.length - 1) {
+      currentQuestion++;
+      var question = document.getElementById("qt"); //Question By ID
+      question.textContent = questionsArray[currentQuestion].text;
+      var elements = document.querySelectorAll(".answer-btn"); // Class - 4
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].textContent = questionsArray[currentQuestion].options[i];
+      }
+    } else {
+      console.log(score);
+      endGame();
     }
-  }else{
-    console.log(score)
-    endGame()
-  }
+  }, 800);
 }
 
-retryButton.addEventListener("click", function() {
-  location.reload()
-})
+retryButton.addEventListener("click", function () {
+  location.reload();
+});

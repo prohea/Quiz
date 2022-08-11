@@ -161,7 +161,7 @@ main {
 }
 
 .answer-btn:hover {
-  background-color: #0fe516;
+  background-color: #8a18c3;
   color: white;
 }
 
@@ -203,4 +203,12 @@ main {
   .nav {
     flex-direction: column;
   }
+}
+
+.wrong{
+  background-color: red;
+}
+
+.right{
+  background-color: rgb(74, 191, 32);
 }
