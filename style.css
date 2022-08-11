@@ -5,8 +5,26 @@
 /* Header One */
 h1 {
   color: rgb(42, 40, 189);
-  text-decoration: wavy;
+  font-size: 400%;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 20px;
+  animation-name: bluer;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bluer {
+  from {
+    color: rgb(42, 40, 189);
+  }
+
+  75% {
+    color: rgb(15, 14, 57);
+  }
+
+  to {
+    color: rgb(42, 40, 189);
+  }
 }
 
 /* Header Two */
@@ -23,7 +41,7 @@ p {
 
 /* Body */
 body {
-  background-color: rgb(13, 9, 9);
+  background-color: black;
   background-image: none;
 }
 
@@ -33,6 +51,13 @@ main {
   background-repeat: no-repeat;
   background-position: left;
   background-size: contain;
+  border-color: #970606;
+  border-style: groove;
+  border-color: #970606;
+  background-color: rgb(13, 9, 9);
+  border-radius: 10px;
+  width: 42em;
+  height: 22em;
 }
 
 /* Start Button */
@@ -58,10 +83,8 @@ main {
   color: white;
   padding: 15px 32px;
   font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
   border-radius: 12px;
-  align-content: center;
+  margin-bottom: 2em;
 }
 
 #retrybutton:hover {
@@ -76,14 +99,27 @@ main {
 
 /* Game Over */
 #game-over {
-  background-image: url("https://pa1.narvii.com/6033/f368f88ba3cbce49059427f5362663aa42316a6e_hq.gif");
-  background-repeat: no-repeat;
-  background-position: right;
   background-size: contain;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 150px;
+  font-size: 100px;
   color: red;
-  text-align: left;
+  text-align: center;
+  border-color: #970606;
+  border-style: groove;
+  background-color: black;
+  border-radius: 10px;
+  width: 8em;
+}
+
+#over-screen {
+  background-position: center;
+  background-color: black;
+  border-radius: 10px;
+  background-image: url("https://pa1.narvii.com/6033/f368f88ba3cbce49059427f5362663aa42316a6e_hq.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 2em;
+  margin-left: 0.5em;
 }
 
 /* Timer */
@@ -91,6 +127,7 @@ main {
   color: red;
   text-decoration: dotted;
   align-items: center;
+  margin-bottom: 0.5em;
 }
 
 /* Question Container */
@@ -102,19 +139,25 @@ main {
   background-size: contain;
   padding: 20px;
   flex-direction: row;
+  border-color: #970606;
+  border-style: groove;
+  background-color: #06060a;
+  width: 32em;
+  height: 20em;
+  text-align: left;
 }
 
-/* Answer Button */
 .answer-btn {
   background-color: #141d36;
   color: white;
   padding: 15px 32px;
   font-size: 16px;
-  margin: 4px 2px;
   border-radius: 10px;
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
+  width: 150px;
+  margin-left: 6em;
+  margin-bottom: 0.5em;
 }
 
 .answer-btn:hover {
@@ -122,30 +165,42 @@ main {
   color: white;
 }
 
+/* Score Button */
+#scorebutton {
+  background-color: #0f0c0c;
+  color: white;
+  padding: 15px 32px;
+  font-size: 20px;
+  border-radius: 12px;
+  align-content: center;
+  margin-bottom: 2em;
+}
+
+#scorebutton:hover {
+  background-color: #9a1515;
+  color: white;
+}
+
 /* Result Info */
 #result-info {
-    color: white;
-    position: absolute;
+  color: white;
+  position: absolute;
+  border-style: solid;
+  border-color: #970606;
+  background-color: #aa3030;
+  border-radius: 10px;
+  width: 42em;
+  height: 22em;
 }
 
-/* Screen Resize One */
-@media screen and (max-width: 992px) {
-  body {
-    font-size: medium;
-  }
-
-  #question-container {
-    font-size: medium;
-  }
+.footer {
+  padding: 10px;
 }
 
-/* Screen Resize Two */
-@media screen and (max-width: 600px) {
-  body {
-    font-size: small;
-  }
-
-  #question-container {
-    font-size: small;
+/* Responsive layout */
+@media screen and (max-width: 700px) {
+  .question-container,
+  .nav {
+    flex-direction: column;
   }
 }

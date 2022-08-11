@@ -16,27 +16,31 @@
       <p>You will have 60 seconds to take the quiz.</p>
       <!-- Start Button -->
       <button id="startbutton">Start</button>
+
     </main>
-    <article>
     <!-- Timer -->
-    <div id="timer" class="hidden"></div>
+    <nav id="timer" class="hidden"></nav>
     <!-- Question Container-->
+    <article>
     <div id="question-container" class="hidden">
     </div>
     <!-- Game Options -->
     <div id="game-options" class="hidden">
     </div>
     <!-- Game Over -->
-    <div id="game-over" class="hidden">Game over!
+    <section id="game-over" class="hidden">Game over!
+      <section id="over-screen"></section>
       <!-- Retry Button -->
       <button id="retrybutton">Retry</button>
-      </div>
+      <button id="scorebutton">Score</button>
+    </section>
+    </article>
     <!-- Result Info -->
-    <div id="result-info" class="hidden">
+    <footer id="result-info" class="hidden">
       <h1>Score:<span id="player-score"></span></h1>
     </div>
     <script src="./javascript.js"></script>
-    </article>
+    </footer>
+  </center>
   </body>
-</center>
 </html>

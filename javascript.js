@@ -3,8 +3,9 @@ console.log("Hello World");
 //Variable Buttons
 var startButton = document.getElementById("startbutton");
 var startGameEl = document.getElementById("start-game");
-var retryButton = document.getElementById("retry");
+var retryButton = document.getElementById("retrybutton");
 var answerButton = document.getElementById("answer-btn");
+var scoreButton = document.getElementById("scorebutton");
 
 //Variable Containers
 var questionContainer = document.getElementById("question-container");
@@ -18,7 +19,7 @@ var gameOverEl = document.getElementById("game-over");
 startButton.addEventListener("click", startGame);
 
 //Game Variables
-var secondsRemaining = 10;
+var secondsRemaining = 30;
 var currentQuestion = 0;
 var score = 0;
 var timer;
@@ -59,7 +60,10 @@ function startGame() {
     timerEl.innerText = `Time Remaining: ${secondsRemaining}`;
     if (secondsRemaining <= 0) {
       endGame();
+      // if (retryGame) {
+      // }
     }
+  
   }, 1000);
 
   displayQuestion();
@@ -68,15 +72,19 @@ function startGame() {
 //Display Question
 function displayQuestion() {
   questionContainer.innerHTML = `
-        <h2>${questionsArray[currentQuestion].text}</h2>
+        <h2 id="qt">${questionsArray[currentQuestion].text}</h2>
         <button class="answer-btn">${questionsArray[currentQuestion].options[0]}</button>
         <button class="answer-btn">${questionsArray[currentQuestion].options[1]}</button>
         <button class="answer-btn">${questionsArray[currentQuestion].options[2]}</button>
         <button class="answer-btn">${questionsArray[currentQuestion].options[3]}</button>
     `;
+  var elements = document.querySelectorAll(".answer-btn");
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("click", nextQuestion);
+  }
 }
 
-//End Game
+// End Game
 function endGame() {
   //stop the timer
   clearInterval(timer);
@@ -84,9 +92,52 @@ function endGame() {
   questionContainer.classList.add("hidden");
   //show the game-over container
   gameOverEl.classList.remove("hidden");
+  console.log("Click Retry");
+  retryButton.addEventListener("click", retryGame);
+  console.log("Click Score");
+  scoreButton.addEventListener("click", scoreGame);
 }
 
 //Retry Game
 function retryGame() {
-  console.log("Click Retry");
+  clearInterval(timer);
+  gameOverEl.classList.add("hidden");
+  startGameEl.classList.remove("hidden");
+  questionContainer.classList.add("hidden");
+  timerEl.classList.add("hidden");
+  startGame();
 }
+
+//Score
+function scoreGame() {
+  console.log("Click Score Button");
+  gameOverEl.classList.add("hidden");
+  questionContainer.classList.add("hidden");
+  timerEl.classList.add("hidden");
+}
+
+function nextQuestion(event) {
+  console.log(event.target.innerText,event.target.textContent, "btn");
+  var userChoice = event.target.textContent
+  if(userChoice == questionsArray[currentQuestion].correctAnswer) {
+    score+=10
+  }else{
+    secondsRemaining -= 5
+  }
+  if(currentQuestion<questionsArray.length-1){
+    currentQuestion++;
+    var question = document.getElementById("qt") //Question By ID
+    question.textContent = questionsArray[currentQuestion].text
+    var elements = document.querySelectorAll(".answer-btn"); // Class - 4
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].textContent = questionsArray[currentQuestion].options[i]
+    }
+  }else{
+    console.log(score)
+    endGame()
+  }
+}
+
+retryButton.addEventListener("click", function() {
+  location.reload()
+})
