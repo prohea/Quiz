@@ -7,7 +7,6 @@ h1 {
   color: rgb(42, 40, 189);
   font-size: 400%;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  padding: 20px;
   animation-name: bluer;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -142,7 +141,7 @@ main {
   border-color: #970606;
   border-style: groove;
   background-color: #06060a;
-  width: 32em;
+  width: 34em;
   height: 20em;
   text-align: left;
 }
@@ -183,18 +182,19 @@ main {
 
 /* Result Info */
 #result-info {
-  color: white;
-  position: absolute;
-  border-style: solid;
+  background-size: 20em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(100, 31, 123);
+  text-align: center;
   border-color: #970606;
-  background-color: #aa3030;
+  border-style: groove;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ea231e53-e17c-4265-83b5-552457fc0505/d9r77hm-a6ff3787-07cb-41a1-b388-eb0e6eb0d38b.png/v1/fill/w_1024,h_641,strp/super_mario_and_sonic_the_hedgehog_by_banjo2015_d9r77hm-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQxIiwicGF0aCI6IlwvZlwvZWEyMzFlNTMtZTE3Yy00MjY1LTgzYjUtNTUyNDU3ZmMwNTA1XC9kOXI3N2htLWE2ZmYzNzg3LTA3Y2ItNDFhMS1iMzg4LWViMGU2ZWIwZDM4Yi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.sUG5N4SMoRmCZCVAf6Gm3upRC9y18UMfJJWmG5EcD4E");
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: bottom;
   border-radius: 10px;
-  width: 42em;
-  height: 22em;
-}
-
-.footer {
-  padding: 10px;
+  height: 20em;
+  width: 20em;
 }
 
 /* Responsive layout */
@@ -205,10 +205,22 @@ main {
   }
 }
 
-.wrong{
+.wrong {
   background-color: red;
 }
 
-.right{
+.wrong::after {
+  content: url("https://c.tenor.com/psdT6Xe4wPgAAAAj/facepalm-face.gif");
+  width: 20px;
+  height: 20px;
+}
+
+.right {
   background-color: rgb(74, 191, 32);
+}
+
+.right::after {
+  content: url("https://data.whicdn.com/images/306246134/original.gif");
+  width: 20px;
+  height: 20px;
 }

@@ -39,7 +39,7 @@ var questionsArray = [
     correctAnswer: "blue",
   },
   {
-    text: "What are we mostly made up up?",
+    text: "What are we mostly made up of?",
     options: ["blood", "people", "oxygen", "water"],
     correctAnswer: "water",
   },
@@ -66,7 +66,6 @@ function startGame() {
       // }
     }
   }, 1000);
-  footerContainer.classList.remove("hidden");
   displayQuestion();
 }
 
@@ -111,6 +110,7 @@ function retryGame() {
 
 //Score
 function scoreGame() {
+  footerContainer.classList.remove("hidden");
   console.log("Click Score Button");
   gameOverEl.classList.add("hidden");
   questionContainer.classList.add("hidden");
@@ -143,7 +143,7 @@ function nextQuestion(event) {
       console.log(score);
       endGame();
     }
-  }, 800);
+  }, 1000);
 }
 
 retryButton.addEventListener("click", function () {
