@@ -21,6 +21,8 @@ THEN I can save my initials and my score
 # Technologies Used
 HTML, CSS, JavaScript
 # Deployed Project
+https://github.com/prohea/Quiz-Smash
+https://prohea.github.io/Quiz-Smash/
 
 # Screenshot
-![Quiz]()
+![Quiz](./Assets/image/quiz-screenshot.png)
